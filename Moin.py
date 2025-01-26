@@ -43,7 +43,7 @@ PROTECTED_FILES = ["Moin.py", "Moin"]
 BLOCKED_COMMANDS = ['nano', 'vim', 'shutdown', 'reboot', 'rm', 'mv', 'dd']
 
 # Fetch the current user and hostname dynamically
-USER_NAME = os.getlogin()  # Get the current system user
+USER_NAME = os.environ.get("USER", "default_user")  # Get the current system user
 HOST_NAME = socket.gethostname()  # Get the system's hostname
 
 # Store the current directory path
